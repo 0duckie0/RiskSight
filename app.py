@@ -9,29 +9,6 @@ from streamlit_lottie import st_lottie
 
 from scripts.financials import get_live_features
 from scripts.transcript_loader import get_qa_transcript
-import streamlit as st
-import pandas as pd
-from datetime import datetime
-# Import your fixed live features function from financials.py
-from financials import get_live_features  
-
-# 1. Set the browser tab title and icon
-st.set_page_config(
-    page_title="RiskSight - AI Financial Risk Auditor",
-    page_icon="🛡️",
-    layout="wide"
-)
-
-# 2. Get and format the current date dynamically
-current_date = datetime.now().strftime("%B %d, %Y")
-
-# 3. Display the App Name and Live Date Banner
-st.title("🛡️ RiskSight")
-st.markdown(f"**AI-Powered Corporate Distress & Risk Identification Pipeline** | 📅 *As of: {current_date}*")
-st.markdown("---")
-# --- INITIALIZE SESSION STATE (MEMORY) ---
-if "messages" not in st.session_state:
-    st.session_state.messages = []
 
 # --- SETUP & CONFIG ---
 load_dotenv()
