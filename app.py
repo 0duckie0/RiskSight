@@ -29,6 +29,9 @@ current_date = datetime.now().strftime("%B %d, %Y")
 st.title("🛡️ RiskSight")
 st.markdown(f"**AI-Powered Corporate Distress & Risk Identification Pipeline** | 📅 *As of: {current_date}*")
 st.markdown("---")
+# --- INITIALIZE SESSION STATE (MEMORY) ---
+if "messages" not in st.session_state:
+    st.session_state.messages = []
 
 # --- SETUP & CONFIG ---
 load_dotenv()
